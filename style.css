@@ -301,37 +301,30 @@ summary span{
 .faq h2 {
     padding-left: 100px;
 }
-/* --- THE FINAL ACCESSIBILITY FIX --- */
 
-/* This fixes: H1, H2, H3 (Main Bar) */
-.main-bar h1, 
-.main-bar h2, 
-.main-bar h3 {
-    color: #ffffff !important; 
-    background-color: rgba(0,0,0,0) !important; /* Forces transparent background */
+/* This will fix the 24 Contrast Errors for good */
+
+/* 1. Main Titles */
+.main-title, h1, h2, h3 {
+    color: #ffffff !important;
+    background-color: transparent !important;
     background: none !important;
 }
 
-/* This fixes: All 24 Footer Contrast Errors (Links, P tags, Country, etc.) */
+/* 2. Footer Links and Text (The 23 red boxes) */
 footer a, 
-footer p, 
 .footer-grid a, 
-.footer-top, 
-.footer-country,
-.recaptcha-text,
-label[for="lang-footer"] {
-    color: #cecece !important; /* Very light gray to pass every test */
+footer p, 
+.footer-country, 
+.recaptcha-text {
+    color: #cecece !important; /* Lighter gray to pass the test */
 }
 
-/* This fixes: The "Multiple Labels" and "Missing Labels" (WAVE Score) */
+/* 3. The Hidden Labels */
 .sr-only {
     position: absolute !important;
+    left: -9999px !important;
     width: 1px !important;
     height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
     overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
 }
