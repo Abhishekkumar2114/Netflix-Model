@@ -301,41 +301,37 @@ summary span{
 .faq h2 {
     padding-left: 100px;
 }
+/* --- THE FINAL ACCESSIBILITY FIX --- */
 
-/* --- ACCESSIBILITY FIXES --- */
-
-/* 1. Fix for H1, H2, H3 in the Main Bar */
+/* This fixes: H1, H2, H3 (Main Bar) */
 .main-bar h1, 
 .main-bar h2, 
 .main-bar h3 {
     color: #ffffff !important; 
-    background-color: transparent !important; /* Fixes the 'White on White' error */
+    background-color: rgba(0,0,0,0) !important; /* Forces transparent background */
+    background: none !important;
 }
 
-/* 2. Fix for Footer Links, P tags, and Country text */
+/* This fixes: All 24 Footer Contrast Errors (Links, P tags, Country, etc.) */
 footer a, 
+footer p, 
 .footer-grid a, 
 .footer-top, 
 .footer-country,
-.recaptcha-text {
-    color: #b3b3b3 !important; /* Lighter gray to pass contrast test */
-}
-
-/* 3. Fix for Labels (Email and Language) */
-label[for="email-main"], 
-label[for="email-footer"],
+.recaptcha-text,
 label[for="lang-footer"] {
-    color: #ffffff !important;
+    color: #cecece !important; /* Very light gray to pass every test */
 }
 
-/* 4. The 'Invisible' class for Screen Readers */
+/* This fixes: The "Multiple Labels" and "Missing Labels" (WAVE Score) */
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
