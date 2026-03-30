@@ -301,3 +301,41 @@ summary span{
 .faq h2 {
     padding-left: 100px;
 }
+
+/* --- ACCESSIBILITY FIXES --- */
+
+/* 1. Fix for H1, H2, H3 in the Main Bar */
+.main-bar h1, 
+.main-bar h2, 
+.main-bar h3 {
+    color: #ffffff !important; 
+    background-color: transparent !important; /* Fixes the 'White on White' error */
+}
+
+/* 2. Fix for Footer Links, P tags, and Country text */
+footer a, 
+.footer-grid a, 
+.footer-top, 
+.footer-country,
+.recaptcha-text {
+    color: #b3b3b3 !important; /* Lighter gray to pass contrast test */
+}
+
+/* 3. Fix for Labels (Email and Language) */
+label[for="email-main"], 
+label[for="email-footer"],
+label[for="lang-footer"] {
+    color: #ffffff !important;
+}
+
+/* 4. The 'Invisible' class for Screen Readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
