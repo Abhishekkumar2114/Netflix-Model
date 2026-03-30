@@ -11,7 +11,7 @@ body{
 
 .main{
     height: 100vh;
-    background:url(./image.png);
+    background-image:url("bg.jpg");
     background-size: cover;
     background-position: center;
 }
