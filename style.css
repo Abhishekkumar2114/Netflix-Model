@@ -226,10 +226,6 @@ footer a:hover {
 .footer a:hover{
     border-bottom: 1px solid #b3b3b3;
 }
-.footer-lang{
-    margin: 30px 0;
-    display: block;
-}
 .footer-country{
     font-size: 0.8rem;
 }
